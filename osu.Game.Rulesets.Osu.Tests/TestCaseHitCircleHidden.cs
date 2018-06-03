@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using osu.Game.Rulesets.Osu.Mods;
+using osu.Game.Rulesets.Osu.Objects.Drawables;
 
 namespace osu.Game.Rulesets.Osu.Tests
 {
     [TestFixture]
     public class TestCaseHitCircleHidden : TestCaseHitCircle
     {
-        public override IReadOnlyList<Type> RequiredTypes => base.RequiredTypes.Concat(new[] { typeof(OsuModHidden) }).ToList();
+        public override IReadOnlyList<Type> RequiredTypes => base.RequiredTypes.Concat(new[] { typeof(OsuModHidden), typeof(TestCaseHitCircle), typeof(DrawableHitCircle) }).ToList();
 
         public TestCaseHitCircleHidden()
         {
